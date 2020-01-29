@@ -4,7 +4,7 @@ public class lockerArray {
         String[] lockers = new String[100];
 
         //Close all the lockers
-        closeAllLockers(lockers);
+        AllLockersClosed(lockers);
 
         //Invoke the studentLockerChanges method
         studentLockerChanges(lockers);
@@ -20,16 +20,16 @@ public class lockerArray {
     }
 
     // closeAllLockers fills the array with the string "CLOSED"
-    public static void closeAllLockers(String[] lockers){
-        for (int i = 0; i < lockers.length; i++){
-            lockers[i] = "CLOSED";
+    public static void AllLockersClosed(String[] lockers){
+        for (int k = 0; k < lockers.length; k++){
+            lockers[k] = "CLOSED";
         }
     }
     // studentLockerChanges changes the string in each element from "CLOSED" to "OPEN" or vice versa
     public static void studentLockerChanges(String[] lockers){
         int start = 0; // Locker student begins with
-        for (int s = 1; s <= lockers.length; s++){
-            for (int l = 0; l < lockers.length; l += s){
+        for (int r = 1; r <= lockers.length; r++){
+            for (int l = 0; l < lockers.length; l += r){
                 if (isOpen(lockers[l]))
                         lockers[l] = "CLOSED";
                 else
@@ -40,9 +40,9 @@ public class lockerArray {
     }
     // Print displays all open locker numbers separated by exactly one space
     public static void Print(String[] lockers){
-        for (int i = 0; i < lockers.length; i++){
-            if (isOpen(lockers[i])){
-                    System.out.print("L" + (i + 1) + " ");
+        for (int k = 0; k < lockers.length; k++){
+            if (isOpen(lockers[k])){
+                    System.out.print("L" + (k + 1) + " ");
             }
         }
         System.out.println();
